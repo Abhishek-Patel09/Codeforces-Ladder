@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block nav%}
+    <li><span style="font-size:20px; color:black">User :</span><span style="font-size:18px; color:darkblue"> {{ cfHandle }}</span><span style="font-size:20px; color:black"> | Rating :</span><span style="font-size:18px; color:darkblue"> {{ rating }} </span></li>
+{% endblock %}
+
+{% block content %}
+
+<table style="background-color:lightgray" class="table table-border table-striped">
+  <thead >
+    <tr>
+      <th style="text-align:center; color:black">Category</th>
+      <th style="text-align:center; color:black">Accuracy</th>
+      <th style="text-align:center; color:black">Problems Solved</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for key,value in stats.items %}
+    <tr>
+      <td style="color:blue"><a href="http://127.0.0.1:8000/ladder/Abhi009/{{ key }}">{{key}}</a></td>
+      <td style="color:black">{{ value.2 }}</td>
+      <td style="color:black">{{ value.0 }}</td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}

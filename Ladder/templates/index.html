@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}  {% endblock %}
+
+{% block content %}
+  <form method = "POST">
+  {% csrf_token %}
+  <table><label for="handle">Enter a valid Codeforces Handle </label><br>
+  <input type="text" id="handle" name="handle"><br>
+  <button type="submit" class="main-btn"> Submit </button>
+  </table></form>
+{% endblock %}

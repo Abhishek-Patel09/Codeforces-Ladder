@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block nav%}
+    <li><span style="font-size:20px; color:black">User :</span><span style="font-size:18px; color:darkblue"> {{ cfHandle }}</span><span style="font-size:20px; color:black"> | Rating :</span><span style="font-size:18px; color:darkblue"> {{ rating }} </span></li>
+{% endblock %}
+
+{% block content %}
+  <h2>{{ category }}'s suggested problems</h2><br><br>
+  <ul class="list">
+    {% for problem in problems %}
+    <li><a style="font-size:30px; padding:20px;" href="https://codeforces.com/problemset/problem/{{ problem.contestId }}/{{ problem.index}}" target="_blank"> {{ problem.problemId }}   {{ problem.problemName}}</a></li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}
